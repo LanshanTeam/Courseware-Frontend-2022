@@ -36,11 +36,14 @@
     - ES6中引入了对变量、常量、作用域等解释,利用**变量提升***(弱类型)特性可以有丰富的运用,语法不严格。
     - 从一开始就规范编程,可以避免后期的**踩坑**,以及**代码质量**难以提高。
 
+
 #### 2.3 用什么**参考书**
   - 犀牛书-《JavaScript——The Definitive Guide》
-       <img src="img/basic/xns.png" width="40%"/>
+  
+       <img src="img/basic/xns.png" width="50%"/>
   - 红宝书——《JavaScript高级程序设计 第4版》版本越新越好
-      <img src="img/basic/HB.png" width="40%"/>
+  
+      <img src="img/basic/HB.png" width="50%"/>
   - 吃透这两本书你就是JS大佬了。
 
 同学们都急不可耐地想开始编程了吧，下面开始正式实操干货。
@@ -81,7 +84,7 @@
                   <meta charset="UTF-8">
                   <meta http-equiv="X-UA-Compatible" content="IE=edge">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
+                  <title>JavaScript基础知识</title>
               </head>
               <body>
                   <div>
@@ -89,12 +92,9 @@
                   </div>
               </body>
           </html>
-           >
-              
-           </body>
            <script type="text/javascript" src="./first.js"></script>
     ```
-  - HTML文件 index.css
+  - CSS文件 index.css
     ```
         .body{
           width:100%;
@@ -108,12 +108,216 @@
           border-radius:8px;
           background-color:#012eef
         }
-
+        
     ```
-  - HTML文件 first.js
+  - JS文件 first.js
     ``` 
-      fn(){
-        console.log("来蓝山找灿灿学前端!")
-         }
+      function fn(){
+       console.log("来蓝山找灿灿学前端！");
+    }
     ```
+  -  ![](./img/basic/file.png)
+#### 3.2 执行第一个JS程序
+  - 页面事件(event)
+       - 发生在html标签元素上的事情 
+       - 一般通过事件的触发让html元素和js函数建起联系，也叫**事件绑定函数**
+       - 几个常见的事件:
 
+|   事件名  |   执行含义  |参数约定|
+| :------:| :----: | :----: |
+| onclick |  鼠标点击事件 | event.target(点击事件源元素) |
+| onmouseover |  光标移动到元素上方时 |event.clientX(横坐标) event.clientY(纵坐标) |
+| onmouseout |  光标移出元素上方时 |event.clientX(横坐标) event.clientY(纵坐标) |
+| onkeydown |  键盘按键按下事件 |key:键位编号 |
+| onkeyup |  键盘按键松开事件 |key:键位编号 |
+| onfocus |  输入框获取焦点事件 |event.clientX(横坐标) event.clientY(纵坐标)|
+| onblur | 输入框失去焦点事件 |event.clientX(横坐标) event.clientY(纵坐标)|
+| onstroll | 文档被滚动时 |————|
+
+- Console 对象
+  |   控制台方法  |   执行含义  |参数约定|
+  | :------:| :----: | :----: |
+  | log() |  控制台输出一条信息 | Number String Object Array |
+  | clear() | 清空控制台 | ——  |
+  | warn() | 控制台输出警告 | ——  |
+  | assert() | 断言(断言为false打印err)) | Boolean  |
+  | count() | 调用次数计数器 | Number  |
+  - 例子
+    ```
+      console.log("来蓝山找灿灿学前端!")
+    ```
+  - **提问: 对象？**
+
+- 查看控制台:
+  - 在浏览器打开HTML文件,"右键"——>"检查" 或者 F12打开控制台
+  - Edge
+    - ①
+
+    <img src="img/basic/console1.png" width="50%"/>
+   
+    - ②
+ 
+        <img src="img/basic/console2.png" width="50%"/>
+  - Chrome
+    - ①
+  
+        <img src="img/basic/console3.png" width="50%"/>
+    - ②
+     
+        <img src="img/basic/console4.png" width="50%"/>
+
+    - 调试器按键简介:
+  
+        <img src="img/basic/console5.png" width="50%"/>
+  - 点击按钮运行第一个js程序:
+
+       <img src="img/basic/console6.png" width="50%"/>
+ 
+#### 3.3 Javascript 的语法规则特点
+  - 3.3.1 句末分号
+      JS并不想C语言等编译类语言需要严格地使用分号来表征换行,句末分号可以省略。在初学阶段,为了易于理解语句逻辑,**推荐将分号带上**。
+  - 3.3.2 大小写与中英文
+     - 在JS中一切的命名(标识符)、关键字和操作符等,都是区分大小写的,比如:
+  ```
+    function OpenDoor(){
+        console.log("OpenDoor")
+    }
+    function opendoor(){
+        console.log("opendoor")
+    }  
+  ```
+   当调用OpenDoor,只会执行第一个函数,因此可以利用区分大小写的特性对标识符的命名进行规范化命名。
+
+  - 3.3.2 严格模式
+    ```
+     'use strict';
+    ```
+  - 3.3.3 规范化标识符  
+    - 驼峰法
+      - 每一个单词为单位,每一个新单词,eg. `nameList`
+    - 下划线法
+      - 单词统一使用小写,单词之间用下划线连接,eg. `name_list` 
+  - 3.3.4 注释  
+           //	单行注释
+            /*
+              多行注释
+            */
+      ```
+  - 3.3.5 函数 
+    - 普通函数(关键字function)  
+     ```
+        function 函数名(参数名1,参数名2,...){
+          return 参数名1;//返回值 可有可无
+        }
+      ```
+    - 箭头函数(ES6以后的语法)  
+     ```
+      //匿名函数写法
+        (参数名1,参数名2,...)=>{
+          return 参数名1;//返回值 可有可无
+        }
+      //可以将函数赋给一个常量
+      const fn = (参数名1,参数名2,...)=>{
+          return 参数名1;//返回值 可有可无
+        }
+      ```
+ #### 3.4 ES6中标识符初始化
+  -  3.4.1 作用域(scope)
+       - 作用域包括全局(global)与局部(part)两种
+         - 全局作用域在页面打开时创建，页面关闭时销毁
+         - 局部作用域是在函数内创建的作用域,函数执行完毕,局部作用域会销毁
+      ```
+          var num = 10;
+          function nu(){
+          var num = 20;
+          console.log(num);   
+          }
+         nu();
+         console.log(num); 
+      ```
+  -  3.4.2 var
+       - 用于声明一个可变变量,因为是“弱类型”声明,该变量可以赋为任意值。var 声明初始化可以在分离也可以同时完成,但是要注意的是,在未赋值时,变量默认为undefined。
+       ```
+          var a; 
+          console.log(a) //undefined
+          a = "1";
+          var b = "2";
+          console.log(a,b)  //1 2
+          var c = 3;
+          console.log(a + c) //13
+          console.log(c + a) //4
+       ```    
+       - var 的变量提升
+         - 以var为界以下到结束,为var声明变量的作用域,但函数体会自动提升到作用域顶层,变量可以先于声明语句调用。
+          ```
+              ()=>{
+                console.log(b)
+                var b = 2;
+              }
+          ```
+  -  3.4.3 let
+      - let的用法与var很接近,初学只需要记得三点区别
+        - var声明范围是**函数作用域**， 而let声明的范围是**块级作用域**
+           ```
+             if(true){
+                var name = 'LanMei';
+                console.log (name);  //LanMei
+             }
+              console.log (name);  //LanMei
+              if(true){
+                  let birth = 1010;
+                  console.log (birth);  //1010
+              }
+              console.log (birth);  //Uncaught ReferenceError: birth is not defined
+           ``` 
+       - 全局作用域下,var变量会指向window,而let变量只会指向变量本身
+           ```
+             var name = 'LanMei';
+               let birth = 1010;
+               console.log(window.name)            //LanMei
+               console.log(window.birth)           //undefined
+               console.log(birth)               //1010
+            ```
+        - var可以重复声明同一变量,但是let不能
+          ```
+              let birth = 1010;
+              let birth = 1030;
+              console.log (birth);  //Uncaught SyntaxError: Identifier 'birth' has already been declared
+              var name = 'LanMei';
+              var name = 'HongMei';
+              var name = 'HuangMei';
+              console.log (name);  //HuangMei
+          ```  
+          若一定要用let,也可以使用如下写法:
+           ```
+           ()=>{
+            let birth = 1010;
+            console.log(birth)
+            }
+           let birth = 1030;   
+           console.log(birth)
+          ```    
+  -  3.4.4 const
+        -  创建一个布尔型
+ #### 3.5 Javascript 六大基本数据类型
+  -  3.5.1 Number
+     -  创建一个数值型
+      - 数值型操作方法 
+  -  3.5.2 String
+        - 创建一个字符串
+        - 字符串操作方法 
+  -  3.5.3 Boolean
+      -  创建一个布尔型
+    
+  -  3.5.4 null
+      -  创建一个null类
+  -  3.5.5 undefined
+          -  创建一个undefined类型
+          -  数组操作方法 
+  -  3.5.6 Object
+     -  **对象成员**
+       
+     -  **数组(Array)**
+          -  创建一个数组
+          -  数组操作方法 
+     -  **函数方法**
