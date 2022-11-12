@@ -75,14 +75,45 @@
 - 附: 外引式代码框架:
   - HTML文件 index.html
     ```
-
+        <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Document</title>
+              </head>
+              <body>
+                  <div>
+                    <input class="btn-1" type="button" value="行内引入方式" onclick="fn()";>
+                  </div>
+              </body>
+          </html>
+           >
+              
+           </body>
+           <script type="text/javascript" src="./first.js"></script>
     ```
   - HTML文件 index.css
     ```
+        .body{
+          width:100%;
+          height:100%;
+          margin:25% 25%;
+          background-color:#efefef
+        }
+        .btn-1{
+          width:"3rem";
+          border:none;
+          border-radius:8px;
+          background-color:#012eef
+        }
 
     ```
   - HTML文件 first.js
-    ```
-
+    ``` 
+      fn(){
+        console.log("来蓝山找灿灿学前端!")
+         }
     ```
 
