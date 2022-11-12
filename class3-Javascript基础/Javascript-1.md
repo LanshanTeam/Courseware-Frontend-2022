@@ -197,7 +197,8 @@
       - 每一个单词为单位,每一个新单词,eg. `nameList`
     - 下划线法
       - 单词统一使用小写,单词之间用下划线连接,eg. `name_list` 
-  - 3.3.4 注释  
+  - 3.3.4 注释
+      ```  
            //	单行注释
             /*
               多行注释
@@ -270,7 +271,7 @@
               }
               console.log (birth);  //Uncaught ReferenceError: birth is not defined
            ``` 
-       - 全局作用域下,var变量会指向window,而let变量只会指向变量本身
+        - 全局作用域下,var变量会指向window,而let变量只会指向变量本身
            ```
              var name = 'LanMei';
                let birth = 1010;
@@ -298,14 +299,39 @@
            console.log(birth)
           ```    
   -  3.4.4 const
-        -  创建一个布尔型
+     -  const 声明一个常量,常量不可修改,即无法被重新赋值,并且常量声明时**必须初始化**。
+        ```
+          const birth = 1010;
+          birth = 1030;/Uncaught TypeError: Assignment to constant variable.
+           const name;//Uncaught SyntaxError: Missing initializer in const declaration
+         ```
  #### 3.5 Javascript 六大基本数据类型
   -  3.5.1 Number
-     -  创建一个数值型
-      - 数值型操作方法 
+     - 数值型
+       - JS不像C/C++、Java、Python等语言严格区分出浮点型和整型,JS会根据声明情况及运算调整精度位,浮点数和整数都归入数值型数据。
+     - 创建一个数值型
+          ``` 
+              a = new Number()
+              console.log(a)
+               console.log(typeof(a))
+              b = 1
+              a = 2.333
+                console.log(a)
+                console.log(b)
+              console.log(typeof(b))
+          ```
   -  3.5.2 String
+        - 字符串型
+          - JS中不对字符串的长度做约束,可以声明空字符串。
         - 创建一个字符串
+          ``` 
+            str1 = " "
+             console.log(typeof(str1)) //null
+            str2 = '12356'
+            console.log(typeof(str2))  //string
+          ``` 
         - 字符串操作方法 
+          
   -  3.5.3 Boolean
       -  创建一个布尔型
     
@@ -321,3 +347,19 @@
           -  创建一个数组
           -  数组操作方法 
      -  **函数方法**
+
+
+### **四、JavaScript程序结构设计**
+   #### 4.1 JS程序设计基本原则
+         4.1.1 避免非必要的程序闭包
+
+         4.1.2 避免过多的值与函数返回
+   #### 4.2 顺序结构
+    -  4.1.1 与或非
+    -  4.1.2 
+   #### 4.3 选择结构
+   #### 4.4 循环结构
+   #### 4.5 顺序结构
+   #### 4.6 递归嵌套
+
+
