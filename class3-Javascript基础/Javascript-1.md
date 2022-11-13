@@ -3,10 +3,11 @@
 ## 
 ### **一、复习回顾HTML、CSS，Javasripts引入**
 #### 1.1 一个基本HTML、CSS页面
-  - <head> <body> <foot>  <style> <meta> <link>
+- `<head> <body> <foot>  <style> <meta> <link>`
+  
 #### 1.2 实现页面的功能
-  - 输入 <button>    <button>   
-  - 输出 控制台、DOM 
+- 输入 `<button>    <input>` 
+- 输出 控制台、DOM 
 ### **二、JavaScript基础背景知识储备**
 #### 2.1 JavaScript介绍
 - JavaScript是什么？
