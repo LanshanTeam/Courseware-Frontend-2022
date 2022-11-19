@@ -3,7 +3,7 @@ function fn(){
 }
 
 function varLetConst(){
-    console.log("来蓝山找灿狗学前端！");
+   var 
 }
 
 function newNum(){
